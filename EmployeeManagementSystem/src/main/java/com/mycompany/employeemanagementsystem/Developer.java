@@ -1,0 +1,19 @@
+package com.mycompany.employeemanagementsystem;
+
+/**
+ *
+ * @author Asus
+ */
+
+public class Developer extends Employee {
+    public Developer(String employeeID, String name, double salary,
+                   double bonus) {
+        super(employeeID, name, salary, bonus);
+    }
+    
+    // Salaries of developers typically do not include target sales
+    @Override
+    public double calculateSalary() {
+        return this.getSalary() + this.getBonus();
+    }
+}
