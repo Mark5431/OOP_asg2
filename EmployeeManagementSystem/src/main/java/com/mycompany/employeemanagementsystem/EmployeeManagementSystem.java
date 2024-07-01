@@ -7,24 +7,27 @@ package com.mycompany.employeemanagementsystem;
 public class EmployeeManagementSystem {
 
     public static void main(String[] args) {
-        // Instantiate two managers
+        // Instantiate one manager
         Manager manager1 = new Manager("01234", "Alex", 12400, 600);
-        Manager manager2 = new Manager("12345", "Bob", 13000, 600);
-        // Instantiate three developers
-        Developer dev1 = new Developer("23456", "Cindy", 7000, 400);
-        Developer dev2 = new Developer("34567", "Dickson", 8600, 400);
-        Developer dev3 = new Developer("45678", "Edward", 6700, 400);
-        // Instantiate a salesperson
-        Salesperson salesperson1 = new Salesperson("56789", "Faouzia", 4000, 300, 3000);
+        // Instantiate two developers
+        Developer dev1 = new Developer("12345", "Bob", 8000, 450);
+        Developer dev2 = new Developer("23456", "Cindy", 7000, 400);
+
+        // Instantiate three salesperson
+        Salesperson salesperson1 = new Salesperson("34567", "Dickson", 4600, 300, 2500, 0.20);
+        Salesperson salesperson2 = new Salesperson("45678", "Edward", 4200, 300, 2800, 0.30);
+        Salesperson salesperson3 = new Salesperson("56789", "Faouzia", 4000, 300, 3000, 0.24);
         
         // An array to keep all 6 employees:
-        Employee[] employees = {manager1, manager2, dev1, dev2, dev3, salesperson1};
+        Employee[] employees = {manager1, dev1, dev2, salesperson1, salesperson2, salesperson3};
         
-        // Calculate total salary:
-        double total_salary = 0;
+        // Print out employee details using toString() method implicitly & calculate total salary:
+        double totalSalary = 0;
         for (Employee employee : employees) {
-            total_salary += employee.calculateSalary();
+            System.out.println(employee);
+            totalSalary += employee.calculateSalary();
         }
-        System.out.printf("The total salary of all the employees is RM%.2f.",total_salary);
+        System.out.printf("Total salary of all employees: RM%.2f",totalSalary);
+        
     }
 }

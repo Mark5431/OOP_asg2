@@ -16,4 +16,14 @@ public class Developer extends Employee {
     public double calculateSalary() {
         return this.getSalary() + this.getBonus();
     }
+    
+    // Override default toString() method for text formatting
+    @Override
+    public String toString() {
+        return "Employee ID: " + this.getEmployeeID() + "\n" +
+                "Name: " + this.getName() + "\n" + 
+                "Job: Developer \n" +
+                "Base Salary: RM" + String.format("%.2f", this.getSalary()) + "\n" + 
+                "Bonus: RM" + String.format("%.2f", this.getBonus()) + "\n";
+    }
 }
